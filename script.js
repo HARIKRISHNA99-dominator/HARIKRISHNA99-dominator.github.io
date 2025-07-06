@@ -47,10 +47,6 @@ $(document).ready(function(){
         backSpeed: 60,
         loop: true
     });
-    setTimeout(function(){
-    $('.jump-text').addClass('jump-disable');
-    }, 60000); // stops jumping after 1 minute
-
 
     // owl carousel script
     $('.carousel').owlCarousel({
