@@ -27,7 +27,7 @@ $(document).ready(function () {
   });
 
   var typed = new Typed(".typing", {
-    strings: ["Web Developer", "Developer", "Free Styler", "Designer", "Interior Designer"],
+    strings: ["Data Analyst","Web Developer", "Developer", "Designer","Machine Learning Engineer"],
     typeSpeed: 100,
     backSpeed: 60,
     loop: true
