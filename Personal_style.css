@@ -1,220 +1,193 @@
-/* General Styling */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
   scroll-behavior: smooth;
-  font-family: 'Poppins', sans-serif;
 }
 
 body {
-  background-color: #0d0d0d;
-  color: white;
-}
-
-a {
-  text-decoration: none;
-  color: #00ffff;
-}
-
-a:hover {
-  color: #00ff99;
-}
-
-/* Preloader */
-#preloader {
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 1000;
-  width: 100%;
-  height: 100%;
-  background: #111 url('https://media.giphy.com/media/y1ZBcOGOOtlpC/200.gif') center no-repeat;
-  background-size: 100px;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
 }
 
 /* Navbar */
 .navbar {
   position: fixed;
   width: 100%;
-  padding: 15px 0;
+  background: #111;
+  padding: 10px 0;
   z-index: 999;
-  background: transparent;
-  transition: all 0.3s ease;
-}
-
-.navbar.sticky {
-  background: rgba(0, 0, 0, 0.9);
-  box-shadow: 0 4px 12px rgba(0, 255, 255, 0.1);
-}
-
-.navbar .max-width {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 80px;
-}
-
-.navbar .logo a {
-  font-size: 2em;
-  font-weight: 600;
-  color: #00ffff;
-}
-
-.navbar .logo a span {
-  color: #fff;
-}
-
-.navbar .menu {
-  display: flex;
-}
-
-.navbar .menu li {
-  list-style: none;
-}
-
-.navbar .menu li a {
-  display: block;
-  margin: 0 15px;
-  font-size: 18px;
-  font-weight: 500;
   transition: 0.3s ease;
 }
-
-.navbar .menu li a:hover {
-  color: #00ffff;
+.navbar.sticky {
+  background: #333;
 }
-
-.menu-btn i {
-  font-size: 25px;
-  cursor: pointer;
-  display: none;
-}
-
-/* Home Section */
-.home {
-  height: 100vh;
+.navbar .max-width {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+  padding: 0 80px;
 }
-
-.home-content {
-  max-width: 700px;
-  margin: auto;
-  padding: 0 20px;
-}
-
-.home .text-1 {
-  font-size: 24px;
+.logo a {
+  font-size: 28px;
+  font-weight: 600;
   color: #fff;
 }
-
-.home .text-2 {
-  font-size: 50px;
-  font-weight: 600;
-  color: #00ffff;
+.logo a span {
+  color: #00adb5;
 }
-
-.home .text-3 {
-  font-size: 28px;
-  margin: 10px 0;
-}
-
-/* Jump Animation */
-.jump-text {
-  animation: jump 0.8s infinite alternate;
+.menu li {
+  list-style: none;
   display: inline-block;
+  margin-left: 25px;
+}
+.menu li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+.menu li a:hover {
+  color: #00adb5;
 }
 
-.jump-disable {
-  animation: none !important;
+/* Menu toggle (for mobile) */
+.menu-btn i {
+  font-size: 22px;
+  color: #fff;
+  display: none;
+  cursor: pointer;
 }
 
-@keyframes jump {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-10px); }
-}
-
-/* Section Title */
-.title {
-  font-size: 36px;
-  text-align: center;
-  color: #00ffff;
-  margin-bottom: 40px;
-}
-
-/* Project Cards */
-.serv-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-  padding: 20px;
-}
-
-.card {
-  background: #1e1e1e;
-  border-radius: 15px;
-  padding: 25px;
-  transition: transform 0.3s ease;
-  box-shadow: 0 8px 15px rgba(0, 255, 255, 0.1);
-}
-
-.card:hover {
-  transform: translateY(-10px);
-}
-
-.card .box {
-  text-align: center;
-}
-
-.card .box i {
-  font-size: 40px;
-  color: #00ffff;
-  margin-bottom: 15px;
-}
-
-.card .text {
-  font-size: 20px;
-  font-weight: 600;
-  color: #00ffcc;
-  margin-bottom: 10px;
-}
-
-.card p {
-  font-size: 14px;
-  color: #ccc;
-}
-
-/* Scroll-Up Button */
+/* Scroll-up button */
 .scroll-up-btn {
   position: fixed;
-  bottom: 30px;
+  bottom: 20px;
   right: 30px;
   height: 40px;
   width: 40px;
-  background: #00ffff;
-  color: #000;
+  background: #00adb5;
+  color: #fff;
   text-align: center;
   line-height: 40px;
-  border-radius: 5px;
+  font-size: 24px;
+  border-radius: 50%;
   cursor: pointer;
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.3s ease;
-  z-index: 100;
+  display: none;
+}
+.scroll-up-btn.show {
+  display: block;
 }
 
-.scroll-up-btn.show {
-  opacity: 1;
-  pointer-events: auto;
+/* Sections */
+section {
+  padding: 80px 0;
 }
+.max-width {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 30px;
+}
+.title {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 50px;
+  color: #111;
+}
+
+/* Home section */
+.home {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to right, #00adb5, #393e46);
+  color: #fff;
+  height: 100vh;
+}
+.home .home-content {
+  max-width: 700px;
+}
+.home .text-1 {
+  font-size: 25px;
+}
+.home .text-2 {
+  font-size: 40px;
+  font-weight: 600;
+}
+.home .text-3 {
+  font-size: 22px;
+  margin: 10px 0;
+}
+.home a {
+  display: inline-block;
+  background: #fff;
+  color: #00adb5;
+  padding: 10px 20px;
+  margin-top: 10px;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 4px;
+}
+
+/* About, Services, Skills, Teams, Contact shared */
+.about-content, .skills-content, .contact-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+.column.left, .column.right {
+  width: 50%;
+  padding: 15px;
+}
+.about-content .left img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  margin: 20px;
+  flex: 1;
+}
+.card .text {
+  font-weight: bold;
+  margin: 10px 0;
+}
+.card .box i {
+  font-size: 40px;
+  color: #00adb5;
+}
+.bars {
+  margin: 20px 0;
+}
+.bars .info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+.bars .line {
+  height: 5px;
+  background: #ddd;
+  border-radius: 5px;
+}
+.bars .line.html { width: 90%; background: #00adb5; }
+.bars .line.css { width: 70%; background: #00adb5; }
+.bars .line.js { width: 80%; background: #00adb5; }
+.bars .line.mysql { width: 70%; background: #00adb5; }
 
 /* Footer */
 footer {
   background: #111;
-  padding: 15px 0;
-  text-align: center;
   color: #fff;
-  font-size: 14px;
+  text-align: center;
+  padding: 20px;
+}
+footer a {
+  color: #00adb5;
+  text-decoration: none;
 }
