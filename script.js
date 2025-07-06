@@ -15,6 +15,17 @@ $(document).ready(function(){
         }
     });
 
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.0/dist/vanilla-tilt.min.js"></script>
+    <script>
+    VanillaTilt.init(document.querySelectorAll(".card"), {
+    max: 15,
+    speed: 400,
+    glare: true,
+    "max-glare": 0.4,
+});
+</script>
+
+
     // slide-up script
     $('.scroll-up-btn').click(function(){
         $('html').animate({scrollTop: 0});
