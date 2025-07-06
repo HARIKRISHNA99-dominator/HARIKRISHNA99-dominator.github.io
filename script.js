@@ -40,6 +40,12 @@ $(document).ready(function () {
     "max-glare": 0.4,
   });
 
+  setTimeout(() => {
+  document.querySelectorAll('.jump-text').forEach(el => {
+    el.classList.add('jump-disable');
+  });
+  }, 60000);
+
   setTimeout(function () {
     $('.jump-text').addClass('jump-disable');
   }, 60000);
