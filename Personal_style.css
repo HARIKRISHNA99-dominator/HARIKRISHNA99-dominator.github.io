@@ -84,6 +84,26 @@ body {
   display: block;
 }
 
+.jump-text {
+  display: inline-block;
+  animation: jump 1s ease-in-out infinite;
+}
+
+@keyframes jump {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Optional: Stop jumping after 60 seconds */
+.jump-disable {
+  animation: none !important;
+}
+
+
 /* Sections */
 section {
   padding: 80px 0;
