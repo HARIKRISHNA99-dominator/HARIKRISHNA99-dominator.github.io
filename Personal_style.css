@@ -77,6 +77,37 @@ section .title::after{
     transform: translateX(-50%);
 }
 
+/* Add this animation for bouncing effect */
+@keyframes jump {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+body:not(.loaded) .jump-text {
+  animation: jump 0.6s ease-in-out infinite;
+}
+
+/* Scientific UI style */
+.sci-ui {
+  font-family: 'Orbitron', sans-serif;
+  color: #0ff;
+  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #0ff;
+  }
+  to {
+    text-shadow: 0 0 20px #0ff, 0 0 30px #0ff;
+  }
+}
+
 /* navbar styling */
 .navbar{
     position: fixed;
