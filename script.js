@@ -69,4 +69,9 @@ $(document).ready(function(){
             }
         }
     });
+    // Stop the jump animation after 1 minute
+setTimeout(() => {
+  $('body').addClass('loaded');
+}, 60000);
+
 });
