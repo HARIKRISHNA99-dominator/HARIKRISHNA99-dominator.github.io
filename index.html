@@ -2,16 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hari's Personal Website</title>
   <link rel="stylesheet" href="Personal_style.css" />
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
   <div class="scroll-up-btn"><i class="fas fa-angle-up"></i></div>
@@ -22,26 +17,26 @@
       <ul class="menu">
         <li><a href="#home" class="menu-btn">Home</a></li>
         <li><a href="#about" class="menu-btn">About</a></li>
-        <li><a href="#services" class="menu-btn">Projects</a></li>
+        <li><a href="#services" class="menu-btn">Project</a></li>
         <li><a href="#skills" class="menu-btn">Skills</a></li>
         <li><a href="#teams" class="menu-btn">Offers</a></li>
         <li><a href="#contact" class="menu-btn">Contact</a></li>
-        <li><button id="toggle-dark" class="dark-mode-btn"><i class="fas fa-moon"></i></button></li>
       </ul>
       <div class="menu-btn"><i class="fas fa-bars"></i></div>
     </div>
   </nav>
 
+  <!-- home section -->
   <section class="home" id="home">
     <div class="max-width">
-      <div class="home-content">
-        <div class="animated-text">
-          <div class="text-1 jump">Hey, I'M</div>
-          <div class="text-2 jump-delay">Hari Krishna</div>
-          <div class="text-3 jump-delay-2"><b><span class="typing"></span></b></div>
-          <div class="text-4 jump-delay-3">Alumni of VIT - AP</div>
-          <a href="https://www.dropbox.com/scl/fi/0gxfqz227xidyuaqisglt/Hari_Resume-2.pdf?rlkey=344ul8wse780su5xy51ey9694&st=uc0cg639&dl=0">Resume!</a>
+      <div class="home-content animate__animated animate__bounceInDown animate__delay-1s">
+        <div class="text-1 animated-text">Hey, I'M</div>
+        <div class="text-2 animated-text">Hari Krishna</div>
+        <div class="text-3 animated-text">
+          <b>Software Engineer at HSBC</b><span class="typing"></span>
         </div>
+        <br /><b>Alumni of VIT - AP</b><br />
+        <a href="https://www.dropbox.com/scl/fi/0gxfqz227xidyuaqisglt/Hari_Resume-2.pdf?rlkey=344ul8wse780su5xy51ey9694&st=uc0cg639&dl=0" target="_blank">Resume!</a>
       </div>
     </div>
   </section>
@@ -69,11 +64,14 @@
     </div>
   </section>
 
-  <section class="services" id="services" data-aos="fade-up">
+ <section class="services" id="services">
     <div class="max-width">
-      <h2 class="title">
-        🚀 Projects & Research
-        <a class="github-link" href="https://github.com/HARIKRISHNA99-dominator">GitHub ↗</a>
+      <h2 class="title fancy-title">
+        <i class="fas fa-atom"></i> My Projects & Research
+        <br />
+        <a href="https://github.com/HARIKRISHNA99-dominator" target="_blank" class="github-link">
+          <i class="fab fa-github"></i> GitHub
+        </a>
       </h2>
       <div class="serv-content">
         <div class="card" data-aos="zoom-in">
@@ -425,11 +423,13 @@
 
 <!-- footer section start -->
 
-<footer>
+  <footer>
+    <span>
+      Created By <a href="https://www.linkedin.com/in/hari-krishna-p-b501b51b4/">Hari Krishna P</a>
+      | <span class="far fa-copyright"></span> 2021 All rights reserved.
+    </span>
+  </footer>
 
-    <span>Created By <a href="https://www.linkedin.com/in/hari-krishna-p-b501b51b4/">Hari Krishna P</a> | <span class="far fa-copyright"></span> 2021 All rights reserved.</span>
-
-</footer>
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
