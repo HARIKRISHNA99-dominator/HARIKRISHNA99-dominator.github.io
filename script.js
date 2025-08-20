@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // ----------------------------
   // Initialize Swiper for College Section
   // ----------------------------
-  new Swiper(".college-swiper", {
+  const collegeSwiper = new Swiper(".college-swiper", {
     loop: true,
     slidesPerView: 1,
     spaceBetween: 30,
@@ -24,15 +24,51 @@ document.addEventListener("DOMContentLoaded", function () {
       600: { slidesPerView: 2 },
       1000: { slidesPerView: 3 },
     },
+    on: {
+      slideChangeTransitionStart: function () {
+        updateSlideStyles(this);
+      },
+      init: function () {
+        updateSlideStyles(this);
+      },
+    },
   });
+
+  // ----------------------------
+  // Function to update active/side slide styling
+  // ----------------------------
+  function updateSlideStyles(swiper) {
+    swiper.slides.forEach((slide) => {
+      const box = slide.querySelector(".box");
+      slide.classList.remove("swiper-slide-prev", "swiper-slide-next", "swiper-slide-active");
+      box.style.transform = "scale(0.9)";
+      box.style.opacity = "0.6";
+      box.style.boxShadow = "none";
+    });
+
+    const activeSlide = swiper.slides[swiper.activeIndex];
+    const prevSlide = swiper.slides[swiper.previousIndex];
+    const nextSlide = swiper.slides[swiper.activeIndex + 1] || swiper.slides[0];
+
+    if (activeSlide) {
+      const box = activeSlide.querySelector(".box");
+      box.style.transform = "scale(1.1)";
+      box.style.opacity = "1";
+      box.style.boxShadow = "0 15px 25px rgba(0,0,0,0.5)";
+      activeSlide.classList.add("swiper-slide-active");
+    }
+
+    if (prevSlide) prevSlide.classList.add("swiper-slide-prev");
+    if (nextSlide) nextSlide.classList.add("swiper-slide-next");
+  }
 
   // ----------------------------
   // Scroll behavior
   // ----------------------------
-  window.addEventListener("scroll", function () {
-    const navbar = document.querySelector(".navbar");
-    const scrollBtn = document.querySelector(".scroll-up-btn");
+  const navbar = document.querySelector(".navbar");
+  const scrollBtn = document.querySelector(".scroll-up-btn");
 
+  window.addEventListener("scroll", function () {
     // Sticky navbar on scroll
     if (window.scrollY > 20) {
       navbar.classList.add("sticky");
@@ -51,16 +87,15 @@ document.addEventListener("DOMContentLoaded", function () {
   // ----------------------------
   // Scroll-up button click
   // ----------------------------
-  document.querySelector(".scroll-up-btn").addEventListener("click", function () {
-    window.scrollTo({ top: 0, behavior: "auto" }); // instant scroll
-    document.documentElement.style.scrollBehavior = "auto";
+  scrollBtn.addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
   // ----------------------------
   // Smooth scroll on menu items click
   // ----------------------------
-  document.querySelectorAll(".navbar .menu li a").forEach(function (link) {
-    link.addEventListener("click", function () {
+  document.querySelectorAll(".navbar .menu li a").forEach((link) => {
+    link.addEventListener("click", () => {
       document.documentElement.style.scrollBehavior = "smooth";
     });
   });
@@ -68,10 +103,10 @@ document.addEventListener("DOMContentLoaded", function () {
   // ----------------------------
   // Toggle menu/navbar
   // ----------------------------
-  document.querySelector(".menu-btn").addEventListener("click", function () {
+  const menuBtn = document.querySelector(".menu-btn");
+  menuBtn.addEventListener("click", () => {
     const menu = document.querySelector(".navbar .menu");
-    const menuIcon = document.querySelector(".menu-btn i");
-
+    const menuIcon = menuBtn.querySelector("i");
     menu.classList.toggle("active");
     menuIcon.classList.toggle("active");
   });
