@@ -1,44 +1,41 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // ------------------ Scroll Behavior ------------------
+  // Scroll behavior
   window.addEventListener("scroll", function () {
-    const navbar = document.querySelector(".navbar");
-    const scrollBtn = document.querySelector(".scroll-up-btn");
-
     // Sticky navbar on scroll
     if (window.scrollY > 20) {
-      navbar.classList.add("sticky");
+      document.querySelector(".navbar").classList.add("sticky");
     } else {
-      navbar.classList.remove("sticky");
+      document.querySelector(".navbar").classList.remove("sticky");
     }
 
     // Scroll-up button show/hide
     if (window.scrollY > 500) {
-      scrollBtn.classList.add("show");
+      document.querySelector(".scroll-up-btn").classList.add("show");
     } else {
-      scrollBtn.classList.remove("show");
+      document.querySelector(".scroll-up-btn").classList.remove("show");
     }
   });
 
-  // ------------------ Scroll-up Button ------------------
+  // Slide-up button
   document.querySelector(".scroll-up-btn").addEventListener("click", function () {
     window.scrollTo({ top: 0, behavior: "auto" }); // instant scroll
     document.documentElement.style.scrollBehavior = "auto";
   });
 
-  // ------------------ Smooth Scroll for Menu ------------------
+  // Smooth scroll on menu items click
   document.querySelectorAll(".navbar .menu li a").forEach(function (link) {
     link.addEventListener("click", function () {
       document.documentElement.style.scrollBehavior = "smooth";
     });
   });
 
-  // ------------------ Toggle Menu ------------------
+  // Toggle menu/navbar
   document.querySelector(".menu-btn").addEventListener("click", function () {
     document.querySelector(".navbar .menu").classList.toggle("active");
     document.querySelector(".menu-btn i").classList.toggle("active");
   });
 
-  // ------------------ Typing Animation (Typed.js) ------------------
+  // Typing animation (using Typed.js library)
   new Typed(".typing", {
     strings: ["Web Developer", "Developer", "Free Styler", "Designer", "Interior Designer"],
     typeSpeed: 100,
@@ -53,25 +50,20 @@ document.addEventListener("DOMContentLoaded", function () {
     loop: true,
   });
 
-  // ------------------ Colleges Carousel (Owl Carousel) ------------------
-  if (typeof $ !== "undefined" && $(".college-carousel").length) {
-    $(".college-carousel").owlCarousel({
-      margin: 20,
-      loop: true,
-      autoplay: true,
-      autoplayTimeout: 3000,
-      autoplayHoverPause: true,
-      nav: true, // shows next/prev arrows
-      dots: false,
-      responsive: {
-        0: { items: 1 },
-        600: { items: 2 },
-        1000: { items: 3 },
-      },
-    });
-  }
+  // Owl carousel equivalent (needs a vanilla alternative since OwlCarousel is jQuery-based)
+  // You can use Swiper.js or tiny-slider as replacement in vanilla JS.
+  // Example with Swiper.js:
+  // new Swiper(".carousel", {
+  //   loop: true,
+  //   autoplay: { delay: 2000, disableOnInteraction: false },
+  //   slidesPerView: 1,
+  //   breakpoints: {
+  //     600: { slidesPerView: 2 },
+  //     1000: { slidesPerView: 3 },
+  //   }
+  // });
 
-  // ------------------ Stop Jump Animation after 1 minute ------------------
+  // Stop the jump animation after 1 minute
   setTimeout(() => {
     document.body.classList.add("loaded");
   }, 60000);
