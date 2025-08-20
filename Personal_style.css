@@ -466,55 +466,34 @@ section .title::after {
 .contact .right form .button button:hover { color: crimson; background: none; }
 
 /* College Swiper */
-.college-swiper .swiper-slide {
-  display: flex;
-  justify-content: center;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-/* Make all images equal size */
-.college-swiper .swiper-slide .box img {
-  width: 200px;       /* fixed width */
-  height: 200px;      /* fixed height */
-  object-fit: cover;  /* maintain aspect ratio, crop if necessary */
-  border-radius: 10px; 
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Box styling */
 .college-swiper .swiper-slide .box {
   background: #222;
   padding: 20px;
   border-radius: 10px;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-/* Hover effect */
 .college-swiper .swiper-slide:hover .box {
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0,0,0,0.4);
 }
-
-/* Active center slide styling */
 .college-swiper .swiper-slide-active .box {
   transform: scale(1.1);
   box-shadow: 0 15px 25px rgba(0,0,0,0.5);
-  opacity: 1;
 }
-
-/* Side slides (prev/next) slightly smaller and transparent */
 .college-swiper .swiper-slide-prev .box,
 .college-swiper .swiper-slide-next .box {
   transform: scale(0.9);
   opacity: 0.6;
 }
+.college-swiper .swiper-slide img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
 
-/* Navigation buttons */
-.swiper-button-next, .swiper-button-prev { color: crimson; }
-
-/* Pagination active bullet */
-.swiper-pagination-bullet-active { background: crimson; }
 
 /* Footer */
 footer {
