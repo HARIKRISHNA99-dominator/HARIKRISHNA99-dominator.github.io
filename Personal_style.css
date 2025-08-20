@@ -4,6 +4,80 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&family=Orbitron:wght@500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
 
+/* colleges section styling */
+.colleges {
+  background: #111;
+  color: #fff;
+}
+
+.colleges .title::after {
+  content: "my education";
+  background: #111;
+}
+
+.college-carousel .card {
+  background: #222;
+  border-radius: 6px;
+  padding: 25px 35px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.college-carousel .card:hover {
+  background: crimson;
+}
+
+.college-carousel .card .box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.college-carousel .card:hover .box {
+  transform: scale(1.05);
+}
+
+.college-carousel .card img {
+  height: 120px;
+  width: 120px;
+  object-fit: contain;
+  margin-bottom: 15px;
+  border-radius: 50%;
+  border: 3px solid crimson;
+  background: #fff;
+}
+
+.college-carousel .card:hover img {
+  border-color: #fff;
+}
+
+.college-carousel .text {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.owl-nav {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.owl-nav button {
+  background: crimson !important;
+  color: #fff !important;
+  border-radius: 50%;
+  padding: 5px 15px !important;
+  margin: 0 5px;
+  transition: 0.3s;
+}
+
+.owl-nav button:hover {
+  background: #fff !important;
+  color: crimson !important;
+}
+
 /* ------------------------------------
    Reset & Global
 ------------------------------------ */
