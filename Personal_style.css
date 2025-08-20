@@ -471,6 +471,13 @@ section .title::after {
   justify-content: center;
   transition: transform 0.3s ease;
 }
+.college-swiper .swiper-slide .box img {
+  width: 200px;       /* fixed width */
+  height: 200px;      /* fixed height */
+  object-fit: cover;  /* maintains aspect ratio, crops if necessary */
+  border-radius: 10px; /* optional: rounded corners */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 .college-swiper .swiper-slide .box {
   background: #222;
   padding: 20px;
