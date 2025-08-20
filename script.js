@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     slidesPerView: 1,
     spaceBetween: 10,
     centeredSlides: true,
-    initialSlide: 1, // 👈 start from 2nd slide
+    initialSlide: 1, 
     autoplay: {
       delay: 2500,
       disableOnInteraction: false,
