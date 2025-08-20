@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const collegeSwiper = new Swiper(".college-swiper", {
   loop: false,
   slidesPerView: 1,
-  spaceBetween: 30,
+  spaceBetween: 10,
   centeredSlides: true,
   autoplay: {
     delay: 2500,
