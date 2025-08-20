@@ -481,6 +481,10 @@ section .title::after {
   transform: scale(1.1);
   box-shadow: 0 15px 25px rgba(0,0,0,0.5);
 }
+.college-swiper .swiper-slide .box .text,
+.college-swiper .swiper-slide .box p {
+    color: #fff; /* White color */
+}
 .college-swiper .swiper-slide-prev .box,
 .college-swiper .swiper-slide-next .box {
   transform: scale(0.9);
