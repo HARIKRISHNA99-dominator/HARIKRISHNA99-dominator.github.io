@@ -4,27 +4,36 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initialize Swiper for College Section
   // ----------------------------
   const collegeSwiper = new Swiper(".college-swiper", {
-  loop: false,
-  slidesPerView: 1,
-  spaceBetween: 10,
-  centeredSlides: true,
-  autoplay: {
-    delay: 2500,
-    disableOnInteraction: false,
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  breakpoints: {
-    600: { slidesPerView: 2 },
-    1000: { slidesPerView: 3 },
-  },
-});
+    loop: false,
+    slidesPerView: 1,
+    spaceBetween: 10,
+    centeredSlides: true,
+    initialSlide: 1, // 👈 start from 2nd slide
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      600: { slidesPerView: 2 },
+      1000: { slidesPerView: 3 },
+    },
+    on: {
+      init: function () {
+        updateSlideStyles(this);
+      },
+      slideChange: function () {
+        updateSlideStyles(this);
+      },
+    },
+  });
 
   // ----------------------------
   // Function to update active/side slide styling
@@ -32,21 +41,25 @@ document.addEventListener("DOMContentLoaded", function () {
   function updateSlideStyles(swiper) {
     swiper.slides.forEach((slide) => {
       const box = slide.querySelector(".box");
+      if (box) {
+        box.style.transform = "scale(0.9)";
+        box.style.opacity = "0.6";
+        box.style.boxShadow = "none";
+      }
       slide.classList.remove("swiper-slide-prev", "swiper-slide-next", "swiper-slide-active");
-      box.style.transform = "scale(0.9)";
-      box.style.opacity = "0.6";
-      box.style.boxShadow = "none";
     });
 
     const activeSlide = swiper.slides[swiper.activeIndex];
-    const prevSlide = swiper.slides[swiper.previousIndex];
-    const nextSlide = swiper.slides[swiper.activeIndex + 1] || swiper.slides[0];
+    const prevSlide = swiper.slides[swiper.activeIndex - 1];
+    const nextSlide = swiper.slides[swiper.activeIndex + 1];
 
     if (activeSlide) {
       const box = activeSlide.querySelector(".box");
-      box.style.transform = "scale(1.1)";
-      box.style.opacity = "1";
-      box.style.boxShadow = "0 15px 25px rgba(0,0,0,0.5)";
+      if (box) {
+        box.style.transform = "scale(1.1)";
+        box.style.opacity = "1";
+        box.style.boxShadow = "0 15px 25px rgba(0,0,0,0.5)";
+      }
       activeSlide.classList.add("swiper-slide-active");
     }
 
