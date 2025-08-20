@@ -4,35 +4,27 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initialize Swiper for College Section
   // ----------------------------
   const collegeSwiper = new Swiper(".college-swiper", {
-    loop: true,
-    slidesPerView: 1,
-    spaceBetween: 30,
-    centeredSlides: true,
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    breakpoints: {
-      600: { slidesPerView: 2 },
-      1000: { slidesPerView: 3 },
-    },
-    on: {
-      slideChangeTransitionStart: function () {
-        updateSlideStyles(this);
-      },
-      init: function () {
-        updateSlideStyles(this);
-      },
-    },
-  });
+  loop: true,
+  slidesPerView: 1,
+  spaceBetween: 30,
+  centeredSlides: true,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  breakpoints: {
+    600: { slidesPerView: 2 },
+    1000: { slidesPerView: 3 },
+  },
+});
 
   // ----------------------------
   // Function to update active/side slide styling
