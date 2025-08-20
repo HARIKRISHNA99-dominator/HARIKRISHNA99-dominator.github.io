@@ -485,6 +485,13 @@ section .title::after {
 .college-swiper .swiper-slide .box p {
     color: #fff; /* White color */
 }
+.swiper-button-next, .swiper-button-prev {
+    color: crimson;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35px;   /* optional */
+    height: 35px;  /* optional */
+}
 .college-swiper .swiper-slide-prev .box,
 .college-swiper .swiper-slide-next .box {
   transform: scale(0.9);
@@ -497,6 +504,8 @@ section .title::after {
   border-radius: 10px;
   margin-bottom: 15px;
 }
+.swiper-button-prev { left: 5px; }   /* bring left arrow closer */
+.swiper-button-next { right: 5px; }  /* bring right arrow closer */
 
 
 /* Footer */
