@@ -50,6 +50,23 @@ document.addEventListener("DOMContentLoaded", function () {
     loop: true,
   });
 
+  // colleges carousel
+$('.college-carousel').owlCarousel({
+  margin: 20,
+  loop: true,
+  autoplay: true,
+  autoplayTimeout: 3000,
+  autoplayHoverPause: true,
+  nav: true, // shows next/prev arrows
+  dots: false,
+  responsive: {
+    0: { items: 1 },
+    600: { items: 2 },
+    1000: { items: 3 }
+  }
+});
+
+
   // Owl carousel equivalent (needs a vanilla alternative since OwlCarousel is jQuery-based)
   // You can use Swiper.js or tiny-slider as replacement in vanilla JS.
   // Example with Swiper.js:
