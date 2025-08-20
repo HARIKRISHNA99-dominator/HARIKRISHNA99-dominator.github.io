@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initialize Swiper for College Section
   // ----------------------------
   const collegeSwiper = new Swiper(".college-swiper", {
-  loop: true,
+  loop: false,
   slidesPerView: 1,
   spaceBetween: 30,
   centeredSlides: true,
