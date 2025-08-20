@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     slidesPerView: 1,
     spaceBetween: 10,
     centeredSlides: true,
-    initialSlide: 1, 
+    initialSlide: 1, // 👈 Start from 2nd slide
     autoplay: {
       delay: 2500,
       disableOnInteraction: false,
@@ -25,14 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
       600: { slidesPerView: 2 },
       1000: { slidesPerView: 3 },
     },
-    on: {
-      init: function () {
-        updateSlideStyles(this);
-      },
-      slideChange: function () {
-        updateSlideStyles(this);
-      },
-    },
   });
 
   // ----------------------------
@@ -41,12 +33,10 @@ document.addEventListener("DOMContentLoaded", function () {
   function updateSlideStyles(swiper) {
     swiper.slides.forEach((slide) => {
       const box = slide.querySelector(".box");
-      if (box) {
-        box.style.transform = "scale(0.9)";
-        box.style.opacity = "0.6";
-        box.style.boxShadow = "none";
-      }
       slide.classList.remove("swiper-slide-prev", "swiper-slide-next", "swiper-slide-active");
+      box.style.transform = "scale(0.9)";
+      box.style.opacity = "0.6";
+      box.style.boxShadow = "none";
     });
 
     const activeSlide = swiper.slides[swiper.activeIndex];
@@ -55,17 +45,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (activeSlide) {
       const box = activeSlide.querySelector(".box");
-      if (box) {
-        box.style.transform = "scale(1.1)";
-        box.style.opacity = "1";
-        box.style.boxShadow = "0 15px 25px rgba(0,0,0,0.5)";
-      }
+      box.style.transform = "scale(1.1)";
+      box.style.opacity = "1";
+      box.style.boxShadow = "0 15px 25px rgba(0,0,0,0.5)";
       activeSlide.classList.add("swiper-slide-active");
     }
 
     if (prevSlide) prevSlide.classList.add("swiper-slide-prev");
     if (nextSlide) nextSlide.classList.add("swiper-slide-next");
   }
+
+  // Call once at load so initial slide styling applies
+  updateSlideStyles(collegeSwiper);
+
+  // Update styles on slide change
+  collegeSwiper.on("slideChange", function () {
+    updateSlideStyles(collegeSwiper);
+  });
 
   // ----------------------------
   // Scroll behavior
